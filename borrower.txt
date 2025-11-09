@@ -1,47 +1,26 @@
-mysql> create database borrower;
-Query OK, 1 row affected (0.18 sec)
- 
-mysql> use borrower;
+create database borrower;
+
+use borrower;
 Database changed
-mysql> create table B_info(roll_no int(10),name varchar(20),DOI date,nameofbook varchar(40),status varchar(30));
-Query OK, 0 rows affected, 1 warning (1.35 sec)
- 
-mysql> insert into B_info(roll_no,name,DOI,nameofbook,status)values(1,"harshali",'2023-08-04',"DBMS","issued");
-Query OK, 1 row affected (0.11 sec)
- 
-mysql> insert into B_info(roll_no,name,DOI,nameofbook,status)values(2,"harsh",'2023-08-04',"TOC","issued");
-Query OK, 1 row affected (0.13 sec)
- 
-mysql> insert into B_info(roll_no,name,DOI,nameofbook,status)values(3,"smita",'2023-08-04',"CNS","issued");
-Query OK, 1 row affected (0.11 sec)
- 
-mysql> select * from B_info;
-+---------+----------+------------+------------+--------+
-| roll_no | name     | DOI        | nameofbook | status |
-+---------+----------+------------+------------+--------+
-|       1 | harshali | 2023-08-04 | DBMS       | issued |
-|       2 | harsh    | 2023-08-04 | TOC        | issued |
-|       3 | smita    | 2023-08-04 | CNS        | issued |
-+---------+----------+------------+------------+--------+
-3 rows in set (0.00 sec)
- 
-mysql> create table Fine(Roll_no int(10)sDate date,Amt int(20));
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sDate date,Amt int(20))' at line 1
-mysql> create table Fine(roll_no int(10)sDate date,Amt int(30));
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sDate date,Amt int(30))' at line 1
-mysql> create table Fine(roll_no int(10),sDate date,Amt int(20));
-Query OK, 0 rows affected, 2 warnings (1.24 sec)
- 
-mysql> select * from Fine;
-Empty set (0.00 sec)
- 
-mysql> drop procedure if exists p_fine;
-Query OK, 0 rows affected, 1 warning (0.03 sec)
- 
-mysql>
-mysql>     delimiter //
-mysql>
-mysql>     create procedure p_fine(IN rno int,IN  bname varchar(20))
+create table B_info(roll_no int(10),name varchar(20),DOI date,nameofbook varchar(40),status varchar(30));
+
+insert into B_info(roll_no,name,DOI,nameofbook,status)values(1,"harshali",'2023-08-04',"DBMS","issued");
+insert into B_info(roll_no,name,DOI,nameofbook,status)values(2,"harsh",'2023-08-04',"TOC","issued");
+insert into B_info(roll_no,name,DOI,nameofbook,status)values(3,"smita",'2023-08-04',"CNS","issued");
+
+select * from B_info;
+
+create table Fine(Roll_no int(10)sDate date,Amt int(20));
+create table Fine(roll_no int(10)sDate date,Amt int(30));
+create table Fine(roll_no int(10),sDate date,Amt int(20));
+
+select * from Fine;
+
+drop procedure if exists p_fine;
+
+delimiter //
+
+create procedure p_fine(IN rno int,IN  bname varchar(20))
    ->     begin
    ->        declare d1 date;    
    ->        declare daycnt int;
@@ -72,44 +51,11 @@ mysql>     create procedure p_fine(IN rno int,IN  bname varchar(20))
    ->          end if;    
    ->      end;
    -> //
-Query OK, 0 rows affected (0.16 sec)
- 
-mysql>
-mysql> delimiter ;
-mysql> call p_fine(1,"DBMS");
-Query OK, 1 row affected (0.21 sec)
- 
-mysql> select *from Fine;
-+---------+------------+-------+
-| roll_no | sDate      | Amt   |
-+---------+------------+-------+
-|       1 | 2025-11-06 | 41250 |
-+---------+------------+-------+
-1 row in set (0.00 sec)
- 
-mysql> call p_fine(2,"TOC");
-Query OK, 1 row affected (0.27 sec)
- 
-mysql> select *from Fine;
-+---------+------------+-------+
-| roll_no | sDate      | Amt   |
-+---------+------------+-------+
-|       1 | 2025-11-06 | 41250 |
-|       2 | 2025-11-06 | 41250 |
-+---------+------------+-------+
-2 rows in set (0.00 sec)
- 
-mysql> call p_fine(3,"CNS");
-Query OK, 1 row affected (0.34 sec)
- 
-mysql> select *from Fine;
-+---------+------------+-------+
-| roll_no | sDate      | Amt   |
-+---------+------------+-------+
-|       1 | 2025-11-06 | 41250 |
-|       2 | 2025-11-06 | 41250 |
-|       3 | 2025-11-06 | 41250 |
-+---------+------------+-------+
-3 rows in set (0.00 sec)
- 
-mysql>
+delimiter ;
+
+call p_fine(1,"DBMS");
+select *from Fine;
+call p_fine(2,"TOC");
+select *from Fine;
+call p_fine(3,"CNS");
+select *from Fine;
