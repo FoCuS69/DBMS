@@ -34,14 +34,10 @@ create procedure circle()
    ->    select dimeter;
    ->    insert into circle(radius,area,dimeter,circumference) values (radius, area, dimeter,circumference);
    ->  END LOOP cloop;
-   -> end;
-   ->
-   -> //delimiter ;
-
- 
-   -> call circle();
-   -> exit;
-   ->
-use circle2
+   ->  end;
+   ->  //
+delimiter ;
 
 call circle();
+
+select * from circle;
