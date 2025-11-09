@@ -12,18 +12,15 @@ CREATE TABLE N_RollCall (
 -> name VARCHAR(50)
 -> );
 
--- Existing students
 INSERT INTO O_RollCall VALUES (1, 'Alice');
 
 INSERT INTO O_RollCall VALUES (2, 'Bob');
 
--- New roll call (with overlap + new)
-INSERT INTO N_RollCall VALUES (2, 'Bob'); -- already
-exists
+INSERT INTO N_RollCall VALUES (2, 'Bob'); 
 
-INSERT INTO N_RollCall VALUES (3, 'Charlie'); -- new
+INSERT INTO N_RollCall VALUES (3, 'Charlie'); 
 
-INSERT INTO N_RollCall VALUES (4, 'Diana'); -- new
+INSERT INTO N_RollCall VALUES (4, 'Diana'); 
 
 SELECT * FROM O_RollCall;
 
