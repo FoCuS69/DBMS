@@ -1,7 +1,7 @@
 CREATE DATABASE rollcall_db;
 
 USE rollcall_db;
-Database changed
+
 CREATE TABLE O_RollCall (
 -> rollno INT PRIMARY KEY,
 -> name VARCHAR(50)
@@ -30,7 +30,6 @@ SELECT * FROM O_RollCall;
 SELECT * FROM N_RollCall;
 
 DROP PROCEDURE IF EXISTS mycursor1;
-
 
 DELIMITER //
 
@@ -61,7 +60,6 @@ CREATE PROCEDURE mycursor1()
 -> CLOSE c_studentN;
 -> END;
 -> //
-
 
 DELIMITER ;
 CALL mycursor1();
