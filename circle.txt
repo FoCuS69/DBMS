@@ -1,7 +1,7 @@
 create database circle2;
 
 use circle2;
-Database changed
+
 create table circle(radius int(20),dimeter int(20),area float(30),circumference float(30));
 
 drop procedure if exists circle;
@@ -48,3 +48,4 @@ You can turn off this feature to get a quicker startup with -A
  
 Database changed
 call circle();
+
