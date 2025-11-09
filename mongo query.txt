@@ -167,7 +167,7 @@ ObjectId("..."), "RollNo": 1, "Name": "Sachin", "City":
 "Nashik", "Marks": 60, "Pincode": 422005 }
 { "_id": ObjectId("..."), "RollNo": 5, "Name": "Akash", "City": "Mumbai",
 "Marks": 75 }
-TEA_16> db.Student.find({ City: { $ne: "Pune" } })
+db.Student.find({ City: { $ne: "Pune" } })
 { "_id": ObjectId("..."), "RollNo": 1, "Name": "Sachin", "City": "Nashik",
 "Marks": 90, "Pincode": 422005 }
 { "_id": ObjectId("..."), "RollNo": 4, "Name": "Vedika", "City":
@@ -184,3 +184,4 @@ db.Student.find({ Name: /^V/ })
 { "_id": ObjectId("..."), "RollNo": 4, "Name": "Vedika", "City":
 
 "Nashik", "Marks": 60, "Pincode": 422005 } 
+
