@@ -8,8 +8,6 @@ select *from emp_a;
 
 insert into emp_a(emi_id,emp_name,emp_salary)values(1,'Ram',10000),(2,'Ravi',50000),(3,'Dipak',40000);
 
-Records: 3  Duplicates: 0  Warnings: 0
- 
 select *from emp_a;
 
 create table emp_b(emp_id int(10),emp_name varchar(20),emp_salary int(50));
