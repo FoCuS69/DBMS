@@ -1,27 +1,21 @@
 create database stuu;
 
 use stuu;
-Database changed
+
 create table stuu_info(stu_id int(10),stu_name varchar(20));
 
 insert into stuu_info(stu_id,stu_name)value(1,"manasi"),(2,"urvi");
 
-Records: 2  Duplicates: 0  Warnings: 0
- 
 select *from stuu_info;
 
 create table stuu_mark(stu_id int(10),stu_sub varchar(20),stu_mark int(50));
 
 insert into stuu_mark(stu_id,stu_sub,stu_mark)value(1,"math",90),(2,"bio",30);
 
-Records: 2  Duplicates: 0  Warnings: 0
- 
 select *from stuu_mark;
 
 insert into stuu_mark(stu_id,stu_sub,stu_mark)value(3,"maths",90),(5,"biology",30);
 
-Records: 2  Duplicates: 0  Warnings: 0
- 
 select *from stuu_mark;
 
 select stuu_info.stu_name,stuu_mark.stu_sub,stuu_mark.stu_mark from stuu_info INNER JOIN  stuu_mark ON stuu_info.stu_id=stuu_mark.stu_id;
