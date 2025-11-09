@@ -10,8 +10,8 @@ insert into B_info(roll_no,name,DOI,nameofbook,status)values(3,"smita",'2023-08-
 
 select * from B_info;
 
-create table Fine(Roll_no int(10)sDate date,Amt int(20));
-create table Fine(roll_no int(10)sDate date,Amt int(30));
+create table Fine(Roll_no int(10),sDate date,Amt int(20));
+create table Fine(roll_no int(10),sDate date,Amt int(30));
 create table Fine(roll_no int(10),sDate date,Amt int(20));
 
 select * from Fine;
@@ -59,4 +59,5 @@ call p_fine(2,"TOC");
 select *from Fine;
 call p_fine(3,"CNS");
 select *from Fine;
+
 
