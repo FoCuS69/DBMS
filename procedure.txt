@@ -6,8 +6,6 @@ create table stu_marks(rollno int(10),name varchar(10),marks int(20));
 
 insert into stu_marks(rollno,name,marks)value(1,"harshali",850),(2,"smita",990);
 
-Records: 2  Duplicates: 0  Warnings: 0
- 
 select * from stu_marks;
 
 create table Result(rollno int(10),name varchar(30),class varchar(30));
@@ -68,3 +66,4 @@ call proc_Grade();
 select * from stu_marks;
 
 select * from Result;
+
