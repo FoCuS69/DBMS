@@ -60,11 +60,11 @@ delimiter ;
  
 use stud_marks
  
-Database changed
 call proc_Grade();
 
 select * from stu_marks;
 
 select * from Result;
+
 
 
