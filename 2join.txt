@@ -28,3 +28,4 @@ d;
 
 select stuu_info.stu_name,stuu_mark.stu_sub,stuu_mark.stu_mark from stuu_info LEFT JOIN  stuu_mark ON stuu_info.stu_id=stuu_mark.stu_id
 ;UNION select stuu_info.stu_name,stuu_mark.stu_sub,stuu_mark.stu_mark from stuu_info LEFT JOIN  stuu_mark ON stuu_info.stu_id=stuu_mark.stu_id
+
