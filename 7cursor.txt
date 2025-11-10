@@ -62,3 +62,4 @@ DELIMITER ;
 CALL mycursor1();
 
 SELECT * FROM N_RollCall;
+
