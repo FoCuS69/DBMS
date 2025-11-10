@@ -41,3 +41,4 @@ delimiter ;
 call circle();
 
 select * from circle;
+
